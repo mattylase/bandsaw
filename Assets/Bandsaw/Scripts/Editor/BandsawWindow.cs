@@ -5,10 +5,11 @@ using System.Collections.Generic;
 
 namespace Bandsaw
 {
-    public class MainWindow : EditorWindow
+    public class BandsawWindow : EditorWindow
     {
         Vector2 scrollPosition = Vector2.zero;
-        List<string> logs = new List<string>();
+        [SerializeField]
+        static List<Log> logs = new List<Log>();
 
         void OnGUI()
         {
@@ -23,11 +24,16 @@ namespace Bandsaw
             Repaint();
         }
 
-
         [MenuItem("Bandsaw/Logger")]
         public static void ShowWindow()
         {
-            EditorWindow.GetWindow(typeof(MainWindow));
+            var window = EditorWindow.GetWindow(typeof(BandsawWindow));
+            DontDestroyOnLoad(window);
+        }
+
+        public static void SubmitLog(Log log)
+        {
+            logs.Add(log);
         }
     }
 }

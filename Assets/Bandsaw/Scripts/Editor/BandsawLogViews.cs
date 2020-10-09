@@ -6,9 +6,9 @@ namespace Bandsaw
     public static class BandsawLogViews
     {
         private static GUILayoutOption[] logLineOptions = { GUILayout.Height(20) };
-        public static void LogLineView(string log)
+        public static void LogLineView(Log log)
         {
-            EditorGUILayout.LabelField(log, logLineOptions);
+            EditorGUILayout.LabelField(log.content, logLineOptions);
         }
     }
 

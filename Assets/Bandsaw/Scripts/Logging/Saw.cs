@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Unity.CodeEditor;
-using UnityEditor;
+﻿using UnityEngine;
 
 namespace Bandsaw
 {
@@ -11,9 +7,12 @@ namespace Bandsaw
         private static ILogger logger = Debug.unityLogger;
         private static BandsawLogHandler handler = new BandsawLogHandler();
 
-        public static void Log(string tag, string log)
+        public static void Log(string tag, string message)
         {
-            logger.Log(tag, log);
+            logger.Log(tag, message);
+
+            var log = new Log(tag, message);
+            BandsawWindow.SubmitLog(log);
         }
     }
 
