@@ -19,10 +19,6 @@ namespace Bandsaw
             EditorGUILayout.EndScrollView();
         }
 
-        void Awake()
-        {
-        }
-
         void OnInspectorUpdate()
         {
             Repaint();
