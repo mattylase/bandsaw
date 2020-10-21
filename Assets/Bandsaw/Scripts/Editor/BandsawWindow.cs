@@ -15,7 +15,7 @@ namespace Bandsaw
         {
             scrollPosition = new Vector2(0, logs.Count * 20);
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-            logs.ForEach(l => BandsawLogViews.LogLineView(l));
+            logs.ForEach(l => BandsawLogViews.LogLineView(l, (logs.Count - 1) * 20));
             EditorGUILayout.EndScrollView();
         }
 
