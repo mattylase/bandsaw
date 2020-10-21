@@ -11,7 +11,23 @@ namespace Bandsaw
         {
             logger.Log(tag, message);
 
-            var log = new Log(tag, message);
+            var log = new Log(LogLevel.Info, tag, message);
+            BandsawWindow.SubmitLog(log);
+        }
+
+        public static void Warn(string tag, string message)
+        {
+            logger.Log(tag, message);
+
+            var log = new Log(LogLevel.Warn, tag, message);
+            BandsawWindow.SubmitLog(log);
+        }
+
+        public static void Error(string tag, string message)
+        {
+            logger.Log(tag, message);
+
+            var log = new Log(LogLevel.Error, tag, message);
             BandsawWindow.SubmitLog(log);
         }
     }

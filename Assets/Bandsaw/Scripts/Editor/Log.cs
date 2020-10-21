@@ -8,10 +8,14 @@ public class Log
     public string tag;
     [SerializeField]
     public string content;
+    [SerializeField]
+    public LogLevel level;
 
-    public Log(string tag, string content)
+
+    public Log(LogLevel level, string tag, string content)
     {
         this.tag = tag;
         this.content = content;
+        this.level = level;
     }
 }
