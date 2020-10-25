@@ -24,6 +24,11 @@ namespace Bandsaw
             Repaint();
         }
 
+        void OnEnable()
+        {
+            this.titleContent = new GUIContent("Bandsaw Log", EditorGUIUtility.IconContent("UnityEditor.ConsoleWindow").image);
+        }
+
         [MenuItem("Bandsaw/Logger")]
         public static void ShowWindow()
         {

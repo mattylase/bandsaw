@@ -7,12 +7,15 @@ namespace Bandsaw
     {
         private const int LINE_HEIGHT = 30;
         private const int TAG_WIDTH = 150;
+        private const int TIME_WIDTH = 75;
         private static GUIStyle tagStyle = new GUIStyle(EditorStyles.boldLabel);
         private static GUIStyle levelStyle = new GUIStyle(EditorStyles.boldLabel);
         private static GUIStyle messageStyle = new GUIStyle(EditorStyles.label);
+        private static GUIStyle timeStyle = new GUIStyle(EditorStyles.label);
         private static GUILayoutOption[] logLineOptions = { GUILayout.Height(LINE_HEIGHT) };
         private static GUILayoutOption[] logLevelOptions = { GUILayout.Height(LINE_HEIGHT), GUILayout.Width(30), GUILayout.ExpandWidth(false) };
         private static GUILayoutOption[] logTagOptions = { GUILayout.Height(LINE_HEIGHT), GUILayout.Width(TAG_WIDTH) };
+        private static GUILayoutOption[] logTimeOptions = { GUILayout.Height(LINE_HEIGHT), GUILayout.Width(TIME_WIDTH), GUILayout.ExpandWidth(false) };
 
 
         public static void LogLineView(Log log, int pos)
@@ -24,6 +27,7 @@ namespace Bandsaw
             //EditorGUI.DrawRect(new Rect(0, pos, r.width + 50, LINE_HEIGHT), bg);
 
             ShowLogLevelField(log.level);
+            EditorGUILayout.LabelField(log.dateTime.ToLongTimeString(), timeStyle, logTimeOptions);
             EditorGUILayout.LabelField(log.tag, tagStyle, logTagOptions);
             EditorGUILayout.LabelField(log.content, messageStyle, logLineOptions);
             EditorGUILayout.EndHorizontal();

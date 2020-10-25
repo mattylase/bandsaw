@@ -10,6 +10,7 @@ public class Log
     public string content;
     [SerializeField]
     public LogLevel level;
+    public DateTime dateTime;
 
 
     public Log(LogLevel level, string tag, string content)
@@ -17,5 +18,6 @@ public class Log
         this.tag = tag;
         this.content = content;
         this.level = level;
+        this.dateTime = System.DateTime.Now;
     }
 }
