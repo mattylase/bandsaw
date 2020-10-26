@@ -1,6 +1,5 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Bandsaw
@@ -15,7 +14,11 @@ namespace Bandsaw
         {
             scrollPosition = new Vector2(0, logs.Count * 20);
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-            logs.ForEach(l => BandsawLogViews.LogLineView(l, (logs.Count - 1) * 20));
+            for (int i = 0; i < logs.Count; i++)
+            {
+                BandsawLogViews.LogLineView(logs[i], i);
+            }
+            //logs.ForEach(l => BandsawLogViews.LogLineView(l, (logs.Count - 1) * 20));
             EditorGUILayout.EndScrollView();
         }
 

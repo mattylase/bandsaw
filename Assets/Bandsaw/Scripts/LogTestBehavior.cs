@@ -11,6 +11,14 @@ public class LogTestBehavior : MonoBehaviour
         Saw.Log("LogTestBehavior", "Test log STRANGGGG!");
         Saw.Warn("LogTestBehavior", "It's a warning bro!");
         Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
+        Saw.Error("LogTestBehavior", "It's a BIG ERROR!");
     }
 
     // Update is called once per frame
